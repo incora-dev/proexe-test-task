@@ -1,0 +1,41 @@
+.table-wrapper {
+  padding: 10px;
+  box-shadow: -1px 2px 6px 2px #E4E4E4;
+  border-radius: 15px;
+
+  .table-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 30px 10px;
+    border-bottom: 1px solid grey;
+  }
+
+  .table {
+    font-family: sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  thead {
+    background: #F5F5F5;
+    border: 1px solid #CECECE;
+    
+    th {
+      padding: 40px 0;
+      font-size: 14px;
+    }
+  }
+ 
+  tbody {
+    tr {
+      border: 1px solid #CECECE;
+      border-top: none;
+      
+      td {
+        padding: 40px 0;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<h1>Dashboard</h1>
+
+<div class="form-wrapper">
+  
+  <form [formGroup]="newUserForm">
+    <div class="field">
+      <p class="title">Name</p>
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          class="input" 
+          placeholder="Enter your name"
+          formControlName="name"
+          [class.error]="!name.valid && (name.touched || name.dirty)"
+        >
+        <div *ngIf="!name.valid && (name.dirty || name.touched)" class="error-danger">
+          <div *ngIf="name.errors.required">
+            Name is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="title">Email</p>
+      <div class="input-wrapper">
+        <input 
+          type="text" 
+          class="input" 
+          placeholder="Enter your email"
+          formControlName="email"
+          [class.error]="!email.valid && (email.touched || email.dirty)"
+        >
+        <div *ngIf="!email.valid && (email.dirty || email.touched)" class="error-danger">
+          <div *ngIf="email.errors.required">
+            Email is required.
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="buttons">
+    <button 
+      mat-raised-button
+      tabindex="-1"
+      routerLink="/"
+    >
+      Cancel
+    </button>
+    <button 
+      mat-raised-button 
+      color="primary" 
+      (click)="createUser()"
+      tabindex="1"
+      [disabled]="isSubmitDisabled"
+    >
+      Submit
+    </button>
+  </div>
+</div>

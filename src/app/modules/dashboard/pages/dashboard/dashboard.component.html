@@ -1,3 +1,49 @@
-<p>
-  dashboard works!
-</p>
+<h1>Dashboard</h1>
+
+<div class="table-wrapper">
+  <div class="table-title">
+    <div>
+      User list
+    </div>
+    <button 
+      mat-raised-button 
+      color="primary"
+      routerLink="/create-user"
+    >
+      Add new
+    </button>
+  </div>
+  <table class="table">
+    <thead>
+      <th *ngFor="let title of displayedColumns">
+        {{ title | titlecase}}
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.address?.city }}</td>
+        <td>
+          <button 
+            mat-raised-button 
+            color="accent"
+          >
+            Edit
+          </button>
+        </td>
+        <td>
+          <button 
+            mat-raised-button 
+            color="warn"
+            (click)="openDeletePopup(user.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
